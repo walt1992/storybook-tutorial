@@ -26,5 +26,8 @@
     "react-docgen-typescript-loader": "^3.7.2",
     "typescript": "^3.8.3"
   },
-  "description": ""
+  "description": "",
+  "peerDependencies": {
+    "@emotion/core": "^10.0.28"
+  }
 }
