@@ -5,7 +5,6 @@ import {action} from '@storybook/addon-actions';
 
 /** @jsx jsx */
 import {jsx, css} from '@emotion/core';
-import { bool } from 'prop-types';
 
 export default {
     title: 'components|Button',
