@@ -5,6 +5,7 @@ import {action} from '@storybook/addon-actions';
 
 /** @jsx jsx */
 import {jsx, css} from '@emotion/core';
+import Icon from '../Icon/Icon';
 
 export default {
     title: 'components|Button',
@@ -106,6 +107,38 @@ export const customedSized = () => {
             </div>
             <div>
                 <Button width='100%'>FUll WIDTH</Button>
+            </div>
+        </div>
+    )
+}
+
+export const withIcons = () => {
+    return (
+        <div css={buttonWrapper}>
+            <div>
+                <Button size='small'><Icon icon='heart'/>LIKE</Button>
+            </div>
+            <div>
+                <Button size='medium'><Icon icon='heart'/>LIKE</Button>
+            </div>
+            <div>
+                <Button size='large'><Icon icon='heart'/>LIKE</Button>
+            </div>
+        </div>
+    )
+}
+
+export const iconOnly = () => {
+    return (
+        <div css={buttonWrapper}>
+            <div>
+                <Button size='small' iconOnly><Icon icon='heart'/></Button>
+            </div>
+            <div>
+                <Button size='medium' iconOnly><Icon icon='heart'/></Button>
+            </div>
+            <div>
+                <Button size='large' iconOnly><Icon icon='heart'/></Button>
             </div>
         </div>
     )

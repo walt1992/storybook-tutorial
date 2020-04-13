@@ -16,12 +16,14 @@ type ButtonProps = {
     disabled?: boolean;
     /** 버튼의 너비를 임의로 설정합니다. */
     width?: string | number;
+    /** 아이콘만 표시되는 버튼임을 의미합니다 */
+    iconOnly?: boolean;
   };
 
-function Button( { children, theme = 'primary', size = 'medium', disabled = false, width, onClick }:ButtonProps ){
+function Button( { children, theme = 'primary', size = 'medium', disabled = false, iconOnly = false, width, onClick }:ButtonProps ){
     return (
         <button 
-            css={[style, themes[theme], sizes[size], {width}]} 
+            css={[style, themes[theme], sizes[size], {width}, iconOnly && [iconOnlyStyle, iconOnlySizes[size]]]} 
             onClick={onClick}
             disabled={disabled}
         >
@@ -55,12 +57,20 @@ const style = css`
     cursor: not-allowed;
     }
 
+    svg {
+      width: 1em;
+      margin-right: 1em;
+    }
+
 `;
 
 const themes = {
     primary: css`
       background: #20c997;
       color: white;
+      svg {
+        fill: white;
+      }
       &:hover:enabled {
         background: #38d9a9;
       }
@@ -74,6 +84,9 @@ const themes = {
     secondary: css`
       background: #e9ecef;
       color: #343a40;
+      svg {
+        fill: #343a40;
+      }
       &:hover:enabled {
         background: #f1f3f5;
       }
@@ -87,6 +100,9 @@ const themes = {
     tertiary: css`
       background: none;
       color: #20c997;
+      svg {
+        filee: #20c997;
+      }
       &:hover:enabled {
         background: #e6fcf5;
       }
@@ -115,6 +131,26 @@ const sizes = {
       font-size: 1.125rem;
       padding: 0 1.5rem;
     `
+};
+
+const iconOnlyStyle = css`
+  padding: 0;
+  border-radius: 50%;
+  svg {
+    margin: 0;
+  }
+`;
+
+const iconOnlySizes = {
+  small: css`
+    width: 1.75rem;
+  `,
+  medium: css`
+    width: 2.5rem;
+  `,
+  large: css`
+    width: 3rem;
+  `
 };
 
 export default Button;
