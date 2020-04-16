@@ -90,7 +90,7 @@ const Dialog = ({
             )}
         </Fragment>
     );
-    };
+  };
 
 const fullscreen = css`
   position: fixed;
