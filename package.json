@@ -2,10 +2,16 @@
   "name": "react-uikit-reallifeliver",
   "version": "1.0.0",
   "module": "dist/index.js",
+  "types" : "dist/types/index.d.ts",
+  "files" : [
+    "/dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 9009",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build": "rollup -c"
   },
   "keywords": [],
   "author": "",
